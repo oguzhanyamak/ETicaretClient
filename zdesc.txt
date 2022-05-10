@@ -1,0 +1,23 @@
+EP 1 :
+Angular uygulamasının kalbi src/app dir.
+Admin ve UI Modüllerinin eklenmesi 
+Bir modül kendi içinde başka modülleri benimseyecek ise o modülü import etmesi gerekiyor 
+Angular CLI component ekleme sırasında, eklenen componente en yakın modüle giderek declare işlemi yapar.
+Farklı modüllerde tanımlanmış modülleri, farklı yerlerde kullanabilmek için o modüllerin export edilmesi gerekmektedir.
+Her layout için bir component oluşturulması gerekmektedir.
+Modüler yaklaşımlarda rotalar modüllerde yapılmaktadır.
+Componenetlere modül seviyesinde rota tanımı yapılmalı
+oluştuıran child rotalar app.module.ts/AppRoutingModule dosyasında tanımlanmalıdır.
+uygulama açılış ekranları loadchildren olarak tanımlanmazlar ve direk olarak component olarak çağırılır.
+uygulama içerisinde admin paneli material desing ,UI ise boostrap tabanlı olacaktır.
+Material Desing kullanmka için   ------> ng add @angular/material import edilir
+boostrap kullanımı için npm ,paketi ile bootstrap indirilir ardından angular.json dosyasına import edilir
+angular çalışmalarında var olan bir şey özelleştirilmek istenirse bunun için servis kullanılır.
+UI arayüz notifikasyonları için NGX-Toastr kullanılmıştır
+Bekleme durumları için NGX-Spinner kullanılmıştır.
+NGX-Spinner html elementleri sağladığı için kullanılacağı componnet düzeyinde import edilmelidir.
+istenilen animasyon için gerekli css ve js dosyaları import edilir.
+-------------------------------------------------------------------------------------------------------
+Http istekleri yapmak için gerekli servis tanımı yapılmıştır.     /src/app/services/common/
+app.module.ts içinde provider kısmına eklenen nesne bütün uygulamaya tedarik edilir.
+API altyapısı ile haberleşmek için özel bir httpClientServices oluşturuldu ve çalışmaya hazır hale getirildi.
