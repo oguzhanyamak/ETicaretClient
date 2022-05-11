@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Create_Product } from 'src/app/contracts/create_product';
 import { HttpClientService } from 'src/app/services/common/http-client.service';
+import { ListComponent } from './list/list.component';
 
 @Component({
   selector: 'app-products',
@@ -11,9 +13,10 @@ export class ProductsComponent implements OnInit {
   constructor(private httpClientSercive:HttpClientService) { }
 
   ngOnInit(): void {
-    this.httpClientSercive.get({controller:"product"}).subscribe(data => console.log(data));
 
-    //this.httpClientSercive.post({controller:"product"},{name:"Kalem",stock:100,price:15}).subscribe();
   }
 
+  @ViewChild(ListComponent) listComponents:ListComponent;
+  createdProduct(createdProduct:Create_Product){this.listComponents.getProducts();}
+  
 }
