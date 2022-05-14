@@ -21,3 +21,7 @@ istenilen animasyon için gerekli css ve js dosyaları import edilir.
 Http istekleri yapmak için gerekli servis tanımı yapılmıştır.     /src/app/services/common/
 app.module.ts içinde provider kısmına eklenen nesne bütün uygulamaya tedarik edilir.
 API altyapısı ile haberleşmek için özel bir httpClientServices oluşturuldu ve çalışmaya hazır hale getirildi.
+------------------------------------------------------------------------------------------------
+Silme işlemini AngularJS üzerinde directive vererek silme işleminin yapılması sağlandı
+Silme işlemi için gerekli arayüz düzenlemesi yapıldı.
+
