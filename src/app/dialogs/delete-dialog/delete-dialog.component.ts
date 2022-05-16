@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class DeleteDialogComponent {
 
+  
   constructor(
     public dialogRef: MatDialogRef<DeleteDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DeleteState,
