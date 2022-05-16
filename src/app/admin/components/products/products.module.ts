@@ -11,6 +11,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { DeleteDirective } from 'src/app/directives/admin/delete.directive';
+import {MatDialogModule} from '@angular/material/dialog';
+//import { DialogModule } from '../../../dialogs/dialog.module';
 @NgModule({
   declarations: [
     ProductsComponent,
@@ -26,10 +28,11 @@ import { DeleteDirective } from 'src/app/directives/admin/delete.directive';
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
+    MatDialogModule,
     RouterModule.forChild([
       {path:"",component:ProductsComponent},
       {path:"products",component:ProductsComponent}
     ])
   ]
 })
-export class ProductsModule { }
+export class ProductsModule {}
