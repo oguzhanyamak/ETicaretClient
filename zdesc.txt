@@ -24,4 +24,7 @@ API altyapısı ile haberleşmek için özel bir httpClientServices oluşturuldu
 ------------------------------------------------------------------------------------------------
 Silme işlemini AngularJS üzerinde directive vererek silme işleminin yapılması sağlandı
 Silme işlemi için gerekli arayüz düzenlemesi yapıldı.
-
+-------------------------------------------------------------------------------------------------
+File Upload işlemi için FileUpload modülü oluşturulup ardından component oluşturulmuştur. 
+file upload işlemleri için ngx-file-drop kullanılacaktır.
+https://openbase.com/js/ngx-file-drop
