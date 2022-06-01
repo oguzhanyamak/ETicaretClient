@@ -9,13 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -25,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgxSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
 
   ],
   providers: [{provide:"baseUrl",useValue:"https://localhost:7018/api",multi:true}],
