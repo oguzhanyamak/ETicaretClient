@@ -28,3 +28,8 @@ Silme işlemi için gerekli arayüz düzenlemesi yapıldı.
 File Upload işlemi için FileUpload modülü oluşturulup ardından component oluşturulmuştur. 
 file upload işlemleri için ngx-file-drop kullanılacaktır.
 https://openbase.com/js/ngx-file-drop
+-------------------------------------------------------------------------------------------------
+https://getbootstrap.com/docs/5.2/forms/overview/
+linkten alınan basit boostrap fomr şablonu düzenlenerek basit kayıt sayfası oluşturuldu.
+Reactive formlar kullanılarak girilen değerlerin valide edilmesi sağlandı ve gerekli alt yapı hazırlandı
+-------------------------------------------------------------------------------------------------
