@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
-import { Create_User } from 'src/app/contracts/users/create_user';
-import { UserService } from 'src/app/services/common/models/user.service';
-import { CustomToastrService, ToastrMessageType, ToastrPosition } from 'src/app/services/ui/custom-toastr.service';
+import { Create_User } from '../../../contracts/users/create_user';
 import { User } from '../../../entities/user';
+import { UserService } from '../../../services/common/models/user.service';
+import { CustomToastrService, ToastrMessageType, ToastrPosition } from '../../../services/ui/custom-toastr.service';
 
 @Component({
   selector: 'app-register',
