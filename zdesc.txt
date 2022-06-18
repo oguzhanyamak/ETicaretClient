@@ -33,3 +33,4 @@ https://getbootstrap.com/docs/5.2/forms/overview/
 linkten alınan basit boostrap fomr şablonu düzenlenerek basit kayıt sayfası oluşturuldu.
 Reactive formlar kullanılarak girilen değerlerin valide edilmesi sağlandı ve gerekli alt yapı hazırlandı
 -------------------------------------------------------------------------------------------------
+Token Karşılama Altyapısı Hazırlandı
