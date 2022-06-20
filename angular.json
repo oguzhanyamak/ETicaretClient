@@ -119,5 +119,7 @@
       }
     }
   },
-  "defaultProject": "ETicaretClient"
+  "cli": {
+    "analytics": "b60db85e-c75e-4906-a86e-6976cfd8f217"
+  }
 }

@@ -9,12 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
-import {MatDialogModule} from '@angular/material/dialog';
+import { JwtModule } from '@auth0/angular-jwt';
+import { LoginComponent } from './ui/components/login/login.component';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -25,10 +28,28 @@ import {MatDialogModule} from '@angular/material/dialog';
     ToastrModule.forRoot(),
     NgxSpinnerModule,
     HttpClientModule,
-    MatDialogModule
+    JwtModule.forRoot({
+      config:{
+        tokenGetter:()=> localStorage.getItem("accessToken"), //Yapılan isteklerde verilen itemi isteğin headerına yerleştirir
+        allowedDomains:["localhost:7018"] //Yetkili bir token'ı bilinmeyen bir api ya göndermek tehlikeli bir durumdur. bu yüzden token'ın gönderileceği adres belirlenir.
+      }
+    }),
+    SocialLoginModule
 
   ],
-  providers: [{provide:"baseUrl",useValue:"https://localhost:7018/api",multi:true}],
+  providers: [{provide:"baseUrl",useValue:"https://localhost:7018/api",multi:true},    {
+    provide: "SocialAuthServiceConfig",
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("356244983126-iuf64nlsdkoho54r.apps.googleusercontent.com")
+        }
+      ],
+      onError: err => console.log(err)
+    } as SocialAuthServiceConfig
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

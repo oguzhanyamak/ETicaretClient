@@ -19,7 +19,6 @@ import { LoginModule } from './login/login.module';
     HomeModule,
     BasketsModule,
     RegisterModule,
-    LoginModule
 
   ]
 })

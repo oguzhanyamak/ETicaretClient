@@ -32,5 +32,28 @@ https://openbase.com/js/ngx-file-drop
 https://getbootstrap.com/docs/5.2/forms/overview/
 linkten alınan basit boostrap fomr şablonu düzenlenerek basit kayıt sayfası oluşturuldu.
 Reactive formlar kullanılarak girilen değerlerin valide edilmesi sağlandı ve gerekli alt yapı hazırlandı
+Giriş yapma işlemi genel bir işlem olduğu için ui altında login module ve component olarak tanımlanmıştır.
+sayfadan alınan giriş bilgileri ile gerekli controller üzerinden api ye istek yapılır.
 -------------------------------------------------------------------------------------------------
 Token Karşılama Altyapısı Hazırlandı
+------------------------------------------------------------------------------------------------
+Angular uygulamalarında güvenlik işlemleri için guard yapılanması bulunmaktadır.
+ng g g -> guard oluşturulması
+Bir component'e gelen istek sonucunda araya girmek istenirse CanActivate() ile araya girilir
+routingModule içerisinde belirtilen yollar arasında guard yapılanması çalıştırmak için canActivate parametresi kullanılmaktadır.
+localstorage da bulunan tokenın expire olup olmadığı auth0 kütüphanesi ile kontrol edilebilmektedir.
+Kütüphane var olan token'ı isteklern header'ına otomatik olarak ekleyecektir. Doğrulama işlemi genel bir işlem olduğu için app.module içine import edilip gerekli konfigürasyonlar yapılmıştır.
+auth0 ile gelen jwtHelperServis üzerinden token ile ilgili işlem yapmayı sağlar.
+Token yok veya expire olduğu durumlarda login ekranına yönlendirme yapılır.
+state ile de gidilecek olan sayfanın adresi de getirilip girişin ardından yönlendirme işlemi yapılır.
+
+guard mekanizması yönetilmek istenilen copmponenetlere bağlanır
+npm install @auth0/angular-jwt paketi yardımcı bir pakettir.
+-------------------------------------------------------------------
+https://update.angular.io/
+Google login için kullanılacak kütüphane angular v14 gerektirdiği için proje içinde angular version 13 -> 14 yapılmıştır.
+Angularx-Social-Login paketi kullanılarak sosyal hesaplarla giriş ve kayıt işlemi yapılacaktır.
+kullanıcı sisteme doğrudan Google üzerinden işlem yapmak istediğinde , sistemde bilgisi yoksa google tarafından gelen veriler backend'e gönderilir kayıt yapılır ve giriş işlemi sağlanır.
+Kütüphanenin kullanımı için indirilen modül app.module altında konfigüre edilmesi gerekmektedir.
+Gerekli işlemler sonrasında backend kısmına istek yapılmaktadır
+--------------------------------------------------------------------
