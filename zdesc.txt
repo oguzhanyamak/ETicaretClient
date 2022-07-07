@@ -57,3 +57,6 @@ kullanıcı sisteme doğrudan Google üzerinden işlem yapmak istediğinde , sis
 Kütüphanenin kullanımı için indirilen modül app.module altında konfigüre edilmesi gerekmektedir.
 Gerekli işlemler sonrasında backend kısmına istek yapılmaktadır
 --------------------------------------------------------------------
+app modüle altında FacebookLogin için gerekli konf. ayarları yapılmıştır.
+gerekli bağlantı bilgileri developers.facebook.com dan tanımlanmıştır.
+Component üzerinde gerekli işlemler provider üzerinden tanımlanmıştır.

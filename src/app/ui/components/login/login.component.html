@@ -1,7 +1,5 @@
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-
+<div class="container">
+  <div class="row">
     <div class="form-group">
       <label for="username">Kullanıcı Adı</label>
       <input #txtUsernameOrEmail type="text" class="form-control" id="username" placeholder="Kullanıcı Adı & Email">
@@ -11,16 +9,15 @@
       <label for="password">Şifre</label>
       <input #txtPassword type="password" class="form-control" id="password" placeholder="Şifre">
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-3"><button style="margin-top:5px;" type="submit" class="btn btn-primary"
-            (click)="login(txtUsernameOrEmail.value, txtPassword.value)">Giriş Yap</button> </div>
-        <div class="col-3">
-          <asl-google-signin-button></asl-google-signin-button>
-        </div>
-      </div>
+  </div>
+  <div class="row mt-2 me-auto">
+    <div class="col-4"><button type="submit" class="btn btn-primary"
+        (click)="login(txtUsernameOrEmail.value, txtPassword.value)">Giriş Yap</button> </div>
+    <div class="col-4">
+      <asl-google-signin-button></asl-google-signin-button>
+    </div>
+    <div class="col-4">
+      <a class="btn text-light" style="background-color: blue;" (click)="facebookLogin()">/Facebook</a>
     </div>
   </div>
-  <div class="col-md-3"></div>
 </div>

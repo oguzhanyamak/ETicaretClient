@@ -1,6 +1,7 @@
 import { SocialUser } from '@abacritt/angularx-social-login';
 import { Injectable } from '@angular/core';
-import { firstValueFrom, Observable } from 'rxjs';
+import { firstValueFrom, observable, Observable } from 'rxjs';
+import { Action } from 'rxjs/internal/scheduler/Action';
 import { TokenResponse } from 'src/app/contracts/Token/tokenResponse';
 import { Create_User } from '../../../contracts/users/create_user';
 import { User } from '../../../entities/user';
@@ -57,4 +58,22 @@ export class UserService {
     }
     callBackFunction();
   }
+
+  async facebookLogin(user:SocialUser,callBackFunction?:()=>void):Promise<any>{
+  const observable:Observable<SocialUser | TokenResponse> = this.httpClientService.post<SocialUser | TokenResponse>({
+      controller:"users",
+      action:"facebook-login"
+    },user);
+    const tokenResponse : TokenResponse = await firstValueFrom(observable) as TokenResponse;
+
+    if(tokenResponse){
+      localStorage.setItem("accessToken",tokenResponse.token.accessToken);
+      this.toastrService.message("Kullanıcı girişi başarıyla yapılmıştır","Giriş Başarılı",{
+        messageType: ToastrMessageType.Success,
+        position : ToastrPosition.TopRight
+      })
+    }
+    callBackFunction();
+  }
+  
 }
